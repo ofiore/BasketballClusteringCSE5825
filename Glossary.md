@@ -34,7 +34,6 @@
 + **DRtg** is the average number of points allowed per 100 possessions
 + **PER** is Player Efficiency Rating which is a measure of a per-minute rating of a player's performance.  For more information: https://www.basketball-reference.com/about/per.html
 + **TS%** is true shooting percentage for the season and is calculated as PTS / (2* FGA + 0.44 * FTA)
-+ **3PAr** is the percent of FG attempts from 3 in the season
 + **FTr** is the number of free throw attempts per FG attempt
 + **ORB%** is an estimate of the percent of offensive rebounds a player grabbed while on the floor
 + **DRB%** is an estimate of the percent of defensive rebounds a player grabbed while on the floor
@@ -55,3 +54,44 @@
 + **SF%** is the percent of minutes during a season a player played the small forward position
 + **PF%** is the percent of minutes during a season a player played the power forward position
 + **C%** is the percent of minutes during a season a player played the center position
++ **OnCourt** is their plus/minus per 100 possessions
++ **On-Off** is their plus/minus net per 100 possessions
++ **BadPass** is their season total of turnovers caused by bad pass
++ **LostBall** is their season total of lost ball turnovers
++ **ShootFC** is their season total of shooting fouls committed
++ **OffFC** is their season total of offensive fouls committed
++ **ShootFD** is their season total of shooting fouls drawn
++ **OffFD** is their season total of offensive fouls drawn
++ **PGA** is their season total of points generated through assists.
++ **And1** is their season total of field goals made in which they also drew a foul
++ **Blkd** is their season total of field goal attempts that were blocked
++ **Dist.** is their average field goal distance away from the hoop
++ **%2PFG** is the percent of field goal attempts that were 2 point shots
++ **0-3%FGA** is the percent of field goal attempts that were from 0 to 3 feet
++ **3-10%FGA** is the percent of field goal attempts that were from 3 to 10 feet
++ **10-16%FGA** is the percent of field goal attempts that were from 10 to 16 feet
++ **16-3P%FGA** is the percent of field goal attempts that were from 16 feet to the three point line
++ **%3PFG** is the percent of field goal attempts that were 3 point shots
++ **0-3FG%** is the percent of made field goals that were attempted between 0 and 3 feet
++ **3-10FG%** is the percent of made field goals that were attempted between 3 and 10 feet
++ **10-16FG%** is the percent of made field goals that were attempted between 10 and 16 feet
++ **16-3PFG%** is the percent of made field goals that were attempted between 16 feet and the 3 point line.
++ **2P%A** is the percent of made 2 point field goals made that they were assisted on
++ **3P%A** is the percent of made 3 point field goals made that they were assisted on
++ **Dunk%FGA** is the percent of field goal attempts that were dunks
++ **Dunks** is the season total of dunks that a player made
++ **C3%3PA** is the percent of three point attempts that were taken in the corner
++ **C33P%** is their shooting percentage of three points attempts that were taken in the corner
++ **FG+**, **2P+**, **3P+**, **eFG**, **FT+**, **TS+**, **FTr+**, **3pA+** are
+adjusted shooting stats.  More information can be found here: https://www.sports-reference.com/blog/2020/06/adjusted-shooting-stats-added-to-basketball-reference/
++ **FGAdd** is the number of extra points added by field goal attempts made above the league average
++ **TSAdd** is the number of extra points added by true shot attempts made above the league average
++ **Season** denotes the season the player accumulated these stats
++ **Salary** denotes how much they were paid. Still need to add
++**%Cap** denotes the percent of that year's salary cap they were paid. Still need to add
+
+
+
+
+
+
