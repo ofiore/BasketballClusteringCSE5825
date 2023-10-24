@@ -1,0 +1,52 @@
+\documentclass[12pt, letterpaper, titlepage]{article}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\hypersetup{colorlinks = true, linkcolor = blue, citecolor=blue, urlcolor = blue}
+
+\title{CSE 5825: Bayesian Machine Learning Project Proposal}
+\author{Owen Fiore and Jared Sullivan}
+
+\begin{document}
+\maketitle
+
+\section{Working with data}
+\subsection{Question 1}
+We have collected data from Basketball Reference and was converted into csv
+format. Data currently is from the last five seasons of the NBA: 2019-2023 however
+we may include more data from previous years as appropriate.  We chose recent
+data due to concerns about changing of league strategies and overall change
+in how basketball is played in the NBA.  More now that ever, players have tried
+to vary their skill set to be more versatile and thus adaptable to other teams.
+The data is fairly exhaustive, as it contains every important statistic tracked
+in basketball in addition to many advanced statistics that have been developed
+in recent years by basketball statisticians to try and gauge player performance.
+In terms of biases of the data, there may be issues with how recent it is, and
+we may want to include more data to increase sample size.  There are concerns
+about the quality of data from 2020 due to the impact of the NBA Bubble which
+was instituted in Orlando, Florida as a result of the COVID-19 epidemic which
+occurred towards the end of the 2020 NBA regular season.  However, the Bubble
+should hopefully not significantly impact the role of players in relation to
+their team.
+
+\section{Thinking about models}
+\subsection{Question 1}
+The observed variables in the data are player statistics that include shooting
+percentages, how efficient players were, defensive contributions, and where
+players shot from.  There are many columns of the data that are calculated from
+other columns, but we chose to include these as they are informative.  For
+example, field goal percent is the player's made field goals divided by their
+field goal attempts.  Looking at field goal percent by itself can be helpful but
+there are players in the NBA who may have high field goal percentages because
+they do not shoot a lot and when they do, their shots are mostly dunks which are
+generally made shots.  Essentially they do not attempt many shots and the shots
+they do attempt are easy to make.
+
+\subsection{Question 2}
+One hidden variable we are going to implement is a scaled position estimate. We
+have the estimates of the percent at each position a player played during the
+season.  Using this we can create a scale from 1 to 5 of the five positions.  For
+example a player who is at 1.00 is a pure point guard, 5.00 is a pure center,
+but 1.50 is a player halfway between point guard and shooting guard.  We are able
+to do this because basketball player positions are known to be ordinal
+
+\end{document}
