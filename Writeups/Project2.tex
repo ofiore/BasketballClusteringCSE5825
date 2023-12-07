@@ -1,0 +1,52 @@
+\documentclass[12pt, letterpaper, titlepage]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{natbib}
+\usepackage{cleveref}
+%\DeclareMathOperator*{\argmax}{arg\,max}
+\hypersetup{colorlinks = true, linkcolor = blue, citecolor=blue, urlcolor = blue}
+
+\title{CSE 5825: Project 2}
+\author{Owen Fiore and Jared Sullivan}
+
+\begin{document}
+\maketitle
+
+\section{Abstract}
+The job of the general manager in the NBA is to build a competitive roster of players while trying to minimize the cost to pay said players or maximizing wins while minimizing salary. A defining feature of this paper is the inclusion of player archetypes as a way of classifying how a player plays basketball in combination with real world limitations such as salary cap. By clustering players into archetypes, labeling the skill of players using NBA metrics such as offensive and defensive efficiency, and predicting a lineup of cost-optimal players we can make recommendations on what an NBA team could do to improve their team. Lastly we can validate our results by training a model to map player efficiency ratings and other statistics to team efficiency rating, which will be used to determine how successful we were. This paper extends previous methods to cluster players by including constraints on salary and player ratings.
+\section{Problem Definition}
+We want to maximize the net efficiency rating of a hypothetical team while staying within the NBA salary cap. We observe for each year various player statistics (some of which we expect to be relevant, some of which will not be) as well as the salary of the player. Team level data on the team efficiency rating will be useful later, and we will want to know what teams won the championship.
+
+The main metric we will be using to quantify how good a player is their net efficiency rating which is the offensive efficiency rating minus their defensive efficiency rating. Offensive efficiency rating is the estimate of the number of points a player team produces while a player is on the court for 100 possessions, defensive efficiency rating is the number of points a team allows while said player is on the court for 100 possessions.  Thus, if a player has a rating of +10, this can mean that they are expected to produce 120 points for every 110 that they allow. 
+
+Let $r_p$ denote the net efficiency rating of player $p$, C denote the salary cap in the given year, $s_p$ denote the salary of player $p$ in the given year.  We want to maximize player efficiency rating while staying under the allotted salary cap. We can quantify this as:
+
+\[argmax(\sum_{p=1}^{10} r_p) | \sum_{p=1}^{10}s_p \leq C\]
+
+To make our analysis more interesting we will use an autoencoder to embed player statistics into a lower dimensional manifold. We can then try to cluster players into archetypes which can be used as labels. Thus, we have a hidden variable that we want to be able to leverage to gain valuable insights into the NBA. Once we train the autoencoder for several years worth of data, we can build optimal teams for every year.  For this we have many combinations of features to choose from, with our original dataset having over 100 features, however some of these features may not be the best for predicting a player’s archetype. Therefore, we will have to experiment with our auto encoder and see what combinations of features work best for drawing out this relationship from our data. Based on the results on our auto encoder we will cluster the points and use this to generate archetypes of players and assign them to the respective players. The autoencoder will help us understand the versatility of NBA players better and account for this hidden variable. Thus, over a 15-20 year period we can graph the number of archetypes found in the optimal team to see how they change. It would be interesting to see for example that archetype 1 players were featured heavily on the best team 10 years ago, but have since faded out of popularity. Thus, archetype is not going to be used to try and build the team compositions, but rather as an evaluation tool.
+
+The ultimate goal of this project is to build a roster of the best players possible while staying under the NBA salary cap. We will implement archetypes to make our analysis more informative and try to learn about how much team composition matters when a team is trying to win championships.
+
+\section{Models and Methods}
+The team rating model will predict the net rating for a hypothetical team based on the chosen players net rating. This will be done by training a linear regression model on past data from teams of which all the player’s net ratings and the teams net ratings are known. The net rating of the team cannot be directly derived from the net rating of all the players on the team, and that is why a model is needed to accomplish this. The model that will be used for the net team rating may be linear or may need higher ordered terms. Since all of these players’ net ratings are on the same scale they can be treated as individual features that the model will be trained on. Therefore, the dataset for this model will look like 10 net ratings from all 10 players on the team and the target variable will be the net rating of the team. For the training data the top 10 most played players on a team based on avg minutes played per game will be chosen. This is so the model is trained on the same team size as the hypothetical teams will be. We will sort the players based on their net rating and put the highest rated player in feature one, second highest in feature 2, etc. This will ensure consistency for each feature.
+
+We will adjust the autoencoder from the paper from \citet{guan} to better fit our data. Their autoencoder was based off of play by play data of NBA players over several games where our data is based on season averages. Therefore the transformer used in this paper will be heavily similar to ours but it won't be completely accurate if we were to incorporate it. This as well as the previous discussion on what features will work best to create this archetype vector makes it clear that we must make adjustments to this for it to be applicable. Our goal with this is to take the outputted vectors and cluster based off of them to define these archetypes.
+
+We propose a brute force algorithm to select players. One of the stipulations of our algorithm is that we need at least one of each position in the final proposed team. This algorithm will have $O(n^{10})$ runtime as we need to consider each player for every position for the combination of the team. The first 5 for loops will be solely picking from each individual position and the last 5 loops will not restrict based on position. At any point when adding a player if the salary cap is exceeded we will return none for that combination essentially telling us that it is not a viable option. This function will output all of the possible viable team combinations and the rating of each player on the respective teams. After we have all of the combinations we will run them all through our model and find which one returns the best predicted net rating and return this as our best predicted performing team under the salary cap. We will use an algorithm to make sure certain combinations do not repeat themselves so that we can hopefully cut down on runtime.
+
+We will sort players based on efficiency rating and add them in sequentially stopping if they exceed the salary cap. It will be necessary to build in limitations to ensure that at least one of every starting position is picked (point guard, shooting guard, small forward, power forward, and center), although it will be interesting to see if certain positions are selected more than others. We will pass the possible selections through our team rating data, which we expect to be very quick
+
+
+\section{Results and Validation}
+As our paper will incorporate multiple different processes we will have various evaluation metrics to determine how successful each one was. The autoencoder, which is going to represent players as a lower dimensional vector, can be evaluated by visualizing the labeled representations and using domain knowledge to check that players who play differently are not close together. Additionally, we can use player position, which ideally provides a rough framework of archetype, to check that the autoencoder is separating players reasonably. These results will be difficult to quantify, and additional steps may have to be taken to make the results more interpretable, such as using a clustering method such as k-means which is what \citet{guan} did, and thus we can compare our results to theirs.
+
+Once we have a team composition we now use the team rating model to evaluate how strong that team is. We will also need to evaluate how this model for mapping player ratings to team ratings does, however this should be relatively simple, as there is sufficient data we can split our data into training and testing and evaluate our performance on the test dataset. Once we have built this model we can use it on our player data to generate a predicted team rating for our team. As team rating is highly correlated with team success, and we are unable to know how our team truly would perform, using team ratings is an acceptable way of determining the strength of our team. 
+
+We will also be looking at the archetypes of each player in our predicted highest performing teams to see what combinations of archetypes are prevalent and determine how big of a role they play in the effectiveness of a team. If we find that there are a high number of archetypes (15-20) and find that the archetypes on our optimal team align well with the championship winning team, that suggests that archetype has a major impact on winning championships. However, it is very possible that the combinations are completely different as there are many external variables that this check does not take into account, most notably being the coach. We can plot the frequency of archetypes over time to try and see if there are any trends and any new types of players that possibly did not exist or were not prevalent 15-20 years ago.
+
+
+\bibliographystyle{chicago}
+\bibliography{citations}
+
+\end{document}
