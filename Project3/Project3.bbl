@@ -1,0 +1,84 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Abadi, Agarwal, Barham, Brevdo, Chen, Citro,
+  Corrado, Davis, Dean, Devin, Ghemawat, Goodfellow, Harp, Irving, Isard, Jia,
+  Jozefowicz, Kaiser, Kudlur, Levenberg, Man\'{e}, Monga, Moore, Murray, Olah,
+  Schuster, Shlens, Steiner, Sutskever, Talwar, Tucker, Vanhoucke, Vasudevan,
+  Vi\'{e}gas, Vinyals, Warden, Wattenberg, Wicke, Yu, and Zheng}{Abadi
+  et~al.}{2015}]{tensorflow2015-whitepaper}
+Abadi, M., A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
+  A.~Davis, J.~Dean, M.~Devin, S.~Ghemawat, I.~Goodfellow, A.~Harp, G.~Irving,
+  M.~Isard, Y.~Jia, R.~Jozefowicz, L.~Kaiser, M.~Kudlur, J.~Levenberg,
+  D.~Man\'{e}, R.~Monga, S.~Moore, D.~Murray, C.~Olah, M.~Schuster, J.~Shlens,
+  B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
+  F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu, and
+  X.~Zheng (2015).
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems.
+\newblock Software available from tensorflow.org.
+
+\bibitem[\protect\citeauthoryear{Chi and Chi}{Chi and Chi}{}]{chi3mixed}
+Chi, Y.~N. and J.~Chi.
+\newblock A mixed model for performance-based classification of nba players.
+\newblock {\em International Journal\/}~{\em 3\/}(03).
+
+\bibitem[\protect\citeauthoryear{Guan, Javed, and Lu}{Guan
+  et~al.}{2023}]{guan2023nba2vec}
+Guan, W., N.~Javed, and P.~Lu (2023).
+\newblock Nba2vec: Dense feature representations of nba players.
+\newblock {\em arXiv preprint arXiv:2302.13386\/}.
+
+\bibitem[\protect\citeauthoryear{Muniz and Flamand}{Muniz and
+  Flamand}{2022}]{muniz2022weighted}
+Muniz, M. and T.~Flamand (2022).
+\newblock A weighted network clustering approach in the nba.
+\newblock {\em Journal of Sports Analytics\/}~(Preprint), 1--25.
+
+\bibitem[\protect\citeauthoryear{Pedregosa, Varoquaux, Gramfort, Michel,
+  Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot, and Duchesnay}{Pedregosa
+  et~al.}{2011}]{scikit-learn}
+Pedregosa, F., G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay (2011).
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research\/}~{\em 12}, 2825--2830.
+
+\bibitem[\protect\citeauthoryear{Rajendiran, Hashemi, Frinklea, Young, Lipke,
+  and Cremaschi}{Rajendiran et~al.}{2023}]{GMM}
+Rajendiran, S., M.~Hashemi, F.~Frinklea, N.~Young, E.~Lipke, and S.~Cremaschi
+  (2023).
+\newblock Investigating tunable experiment variable effects on hipsc-cms
+  maturation via unsupervised learning.
+\newblock In A.~C. Kokossis, M.~C. Georgiadis, and E.~Pistikopoulos (Eds.),
+  {\em 33rd European Symposium on Computer Aided Process Engineering},
+  Volume~52 of {\em Computer Aided Chemical Engineering}, pp.\  2723--2728.
+  Elsevier.
+
+\bibitem[\protect\citeauthoryear{Richardson}{Richardson}{2019}]{richardson2019evolution}
+Richardson, C.~A. (2019).
+\newblock Evolution of a player: Transitions in nba player classifications.
+\newblock {\em Available at SSRN 3515711\/}.
+
+\bibitem[\protect\citeauthoryear{Wang and Zemel}{Wang and
+  Zemel}{2016}]{wang2016classifying}
+Wang, K.-C. and R.~Zemel (2016).
+\newblock Classifying nba offensive plays using neural networks.
+\newblock In {\em Proceedings of MIT Sloan sports analytics conference},
+  Volume~4.
+
+\bibitem[\protect\citeauthoryear{Wu, Feng, Li, Sengupta, and Cheng}{Wu
+  et~al.}{2018}]{wu2018classification}
+Wu, W., K.~Feng, R.~Li, K.~Sengupta, and A.~Cheng (2018).
+\newblock Classification of nba salaries through player statistics.
+\newblock {\em Sports Analytics Group at Berkeley, https://sportsanalytics.
+  berkeley. edu/projects/nba-salaries-stats. pdf [19.09. 2020]\/}.
+
+\bibitem[\protect\citeauthoryear{Zhang, Lu, Liu, Guo, and Liu}{Zhang
+  et~al.}{2016}]{zhang2016application}
+Zhang, L., F.~Lu, A.~Liu, P.~Guo, and C.~Liu (2016).
+\newblock Application of k-means clustering algorithm for classification of nba
+  guards.
+\newblock {\em International Journal of Science and Engineering
+  Applications\/}~{\em 5\/}(1), 1--6.
+
+\end{thebibliography}

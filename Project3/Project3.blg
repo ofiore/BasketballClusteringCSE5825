@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Project3.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: chicago.bst
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Database file #1: citations.bib
+Warning--empty year in chi3mixed
+Warning--page numbers missing in chi3mixed
+Warning--no number and no volume in guan2023nba2vec
+Warning--page numbers missing in guan2023nba2vec
+Warning--no volume for muniz2022weighted
+Warning--no number and no volume in richardson2019evolution
+Warning--page numbers missing in richardson2019evolution
+Warning--no number and no volume in wu2018classification
+Warning--page numbers missing in wu2018classification
+You've used 10 entries,
+            2861 wiz_defined-function locations,
+            673 strings with 7761 characters,
+and the built_in function-call counts, 11905 in all, are:
+= -- 759
+> -- 1528
+< -- 3
++ -- 511
+- -- 523
+* -- 1331
+:= -- 2308
+add.period$ -- 31
+call.type$ -- 10
+change.case$ -- 132
+chr.to.int$ -- 10
+cite$ -- 19
+duplicate$ -- 189
+empty$ -- 399
+format.name$ -- 559
+if$ -- 2122
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 9
+newline$ -- 53
+num.names$ -- 102
+pop$ -- 120
+preamble$ -- 1
+purify$ -- 192
+quote$ -- 0
+skip$ -- 195
+stack$ -- 0
+substring$ -- 300
+swap$ -- 66
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 200
+warning$ -- 9
+while$ -- 85
+width$ -- 0
+write$ -- 135
+(There were 9 warnings)
